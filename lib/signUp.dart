@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_form/termsAndConditions.dart';
 
 import 'home.dart';
 
@@ -49,6 +51,18 @@ class SignUp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                new RichText(
+                text: new TextSpan(
+                  text: 'Terms and Conditions',
+                  style: new TextStyle(color: Colors.blue),
+                  recognizer: new TapGestureRecognizer()
+                    ..onTap = () { Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (BuildContext context) => TermsAndConditions()),
+                    );
+                    },
+                )
+                ),
                 RaisedButton(
                   onPressed: () {
                     Navigator.push(
